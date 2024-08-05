@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
-import 'package:movie_zone/core/widgets/custom_bottom_navigation_bar.dart';
 import 'package:movie_zone/core/widgets/custom_text_field.dart';
 import 'package:movie_zone/features/home/presentation/views/widgets/movie_list.dart';
 import 'package:movie_zone/features/home/presentation/views/widgets/movies_card_list.dart';
@@ -38,7 +37,7 @@ class HomeView extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: CustomBottomNavigationBar(),
+      // bottomNavigationBar: CustomBottomNavigationBar(),
     );
   }
 }

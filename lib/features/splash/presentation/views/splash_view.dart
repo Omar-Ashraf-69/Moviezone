@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_zone/core/utils/assets.dart';
 import 'package:movie_zone/core/utils/size_config.dart';
-import 'package:movie_zone/features/home/presentation/views/home_view.dart';
+import 'package:movie_zone/features/layout/presentation/views/layout_view.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -10,7 +10,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(const Duration(seconds: 2), () {
       // ignore: use_build_context_synchronously
-      Navigator.pushReplacementNamed(context, HomeView.routeName);
+      Navigator.pushReplacementNamed(context, LayoutView.routeName);
     });
     SizeConfig.init(context);
     return Scaffold(

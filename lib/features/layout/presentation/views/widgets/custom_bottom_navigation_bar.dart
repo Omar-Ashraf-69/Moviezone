@@ -1,14 +1,12 @@
-
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/colors.dart';
+import 'package:movie_zone/features/layout/data/models/bottom_navigation_bar_items_list.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({
-    super.key,
-  });
-
+  const CustomBottomNavigationBar({super.key, this.onTap, required this.currentIndex});
+  final void Function(int)? onTap;
+  final int currentIndex;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,30 +26,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
           unselectedItemColor: mediumGreyColor,
           selectedLabelStyle: AppStyles.styleRegular12,
           unselectedLabelStyle: AppStyles.styleRegular12,
-          currentIndex: 0,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 6.0),
-                child: Icon(IconlyLight.home),
-              ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 6.0),
-                child: Icon(IconlyLight.search),
-              ),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Padding(
-                padding: EdgeInsets.only(bottom: 6.0),
-                child: Icon(IconlyLight.bookmark),
-              ),
-              label: 'Watch list',
-            ),
-          ],
+          currentIndex: currentIndex,
+          onTap: onTap,
+          items: items,
         ),
       ),
     );
