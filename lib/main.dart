@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         scaffoldBackgroundColor: kPrimaryColor,
         textTheme: Theme.of(context).textTheme.apply(
-              fontFamily: 'Poppins',
               bodyColor: Colors.white,
               displayColor: Colors.white,
             ),

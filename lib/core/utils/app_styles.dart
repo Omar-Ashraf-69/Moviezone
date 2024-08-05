@@ -42,13 +42,13 @@ abstract class AppStyles {
     fontSize: 18,
     fontWeight: FontWeight.w600,
     fontFamily: 'Poppins',
-    color: Color(0xffEEEEEE),
+    color: Color(0xffffffff),
   );
-  static const TextStyle styleMedium14 = TextStyle(
+  static const TextStyle styleSemiMedium14 = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w500,
+    fontWeight: FontWeight.w600,
     fontFamily: 'Poppins',
-    color: Color(0xffEEEEEE),
+    color: Color(0xffffffff),
   );
   static const TextStyle styleRegular16 = TextStyle(
     fontSize: 16,
