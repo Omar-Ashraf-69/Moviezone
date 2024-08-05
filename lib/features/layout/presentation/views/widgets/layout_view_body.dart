@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_zone/features/home/presentation/views/home_view.dart';
 import 'package:movie_zone/features/layout/presentation/views/widgets/custom_bottom_navigation_bar.dart';
+import 'package:movie_zone/features/search/presentation/views/search_view.dart';
 import 'package:movie_zone/features/watch_list/presentation/views/watch_list_view.dart';
 
 class LayoutViewBody extends StatefulWidget {
@@ -20,10 +21,10 @@ class _LayoutViewState extends State<LayoutViewBody> {
       body: PageView(
         controller: pageController,
         onPageChanged: (value) => setState(() => currentIndex = value),
-        children: [
-          const HomeView(),
-          Container(),
-          const WatchListView(),
+        children: const [
+          HomeView(),
+          SearchView(),
+          WatchListView(),
         ],
       ),
       bottomNavigationBar: CustomBottomNavigationBar(

@@ -10,7 +10,7 @@ class WatchListView extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(left: 24.0, right: 24, top: 24),
+          padding: EdgeInsets.only(left: 26.0, right: 26, top: 24),
           child: Column(
             children: [
               WatchListAppBar(),
@@ -18,6 +18,7 @@ class WatchListView extends StatelessWidget {
                 height: 38,
               ),
               WatchListViewWidget(),
+              // Expanded(child: Image.asset(Assets.imagesEmptyWishlist)),
             ],
           ),
         ),
