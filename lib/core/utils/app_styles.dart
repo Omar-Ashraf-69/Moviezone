@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_zone/utils/colors.dart';
+import 'package:movie_zone/core/utils/colors.dart';
 
 abstract class AppStyles {
   static const TextStyle styleRegular12 = TextStyle(
