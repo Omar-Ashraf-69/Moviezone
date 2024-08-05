@@ -26,20 +26,19 @@ class _LayoutViewState extends State<LayoutViewBody> {
           const WatchListView(),
         ],
       ),
-      bottomNavigationBar:CustomBottomNavigationBar(
+      bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {
-        pageController.animateToPage(
-          index,
-          duration: const Duration(milliseconds: 300),
-          curve: Curves.easeInOut,
-        );
-        setState(() {
-          currentIndex = index;
-        });
-      },
+          pageController.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeInOut,
+          );
+          setState(() {
+            currentIndex = index;
+          });
+        },
       ),
-       
     );
   }
 }

@@ -1,9 +1,10 @@
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesEmptyWishlist
   /// assets/images/Empty_wishlist.png
   static const String imagesEmptyWishlist = "assets/images/Empty_wishlist.png";
+  static const String imagesMovieProshor = "assets/images/movie_proshor.png";
 
   /// Assets for imagesMovie
   /// assets/images/Movie.png
@@ -23,6 +24,6 @@ class Assets {
 
   /// Assets for imagesSearchCantBeFound
   /// assets/images/Search_cant_be_found.png
-  static const String imagesSearchCantBeFound = "assets/images/Search_cant_be_found.png";
+  static const String imagesSearchCantBeFound =
+      "assets/images/Search_cant_be_found.png";
 }
-
