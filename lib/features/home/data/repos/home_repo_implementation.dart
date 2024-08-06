@@ -8,14 +8,13 @@ import 'package:movie_zone/features/home/data/repos/home_repo.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final ApiService apiService;
-  final String baseUrl = "https://api.themoviedb.org/3/";
-
+  final String baseUrl = "https://api.themoviedb.org/3/movie/";
   HomeRepoImpl({required this.apiService});
   @override
   Future<Either<Failure, MovieModel>> getDiscover() async {
     try {
       final response = await apiService.get(
-        url: "${baseUrl}discover/movie?sort_by=popularity.desc&api_key=${ApiKeys.movieKey}",
+        url: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${ApiKeys.movieKey}",
       );
       
       return Right(MovieModel.fromJson(response));
@@ -28,26 +27,62 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getNowPlaying() {
-    // TODO: implement getNowPlaying
-    throw UnimplementedError();
+  Future<Either<Failure, MovieModel>> getNowPlaying() async{
+    try {
+      final response = await apiService.get(
+        url: "$baseUrl/now_playing?api_key=${ApiKeys.movieKey}",
+      );
+      return Right(MovieModel.fromJson(response));
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(error: e.toString()));
+    }
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getPopular() {
-    // TODO: implement getPopular
-    throw UnimplementedError();
+  Future<Either<Failure, MovieModel>> getPopular() async {
+   try {
+      final response = await apiService.get(
+        url: "$baseUrl/popular?api_key=${ApiKeys.movieKey}",
+      );
+      return Right(MovieModel.fromJson(response));
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(error: e.toString()));
+    }
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getTopRated() {
-    // TODO: implement getTopRated
-    throw UnimplementedError();
+  Future<Either<Failure, MovieModel>> getTopRated() async{
+    try {
+      final response = await apiService.get(
+        url: "$baseUrl/top_rated?api_key=${ApiKeys.movieKey}",
+      );
+      return Right(MovieModel.fromJson(response));
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(error: e.toString()));
+    }
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getUpComing() {
-    // TODO: implement getUpComing
-    throw UnimplementedError();
+  Future<Either<Failure, MovieModel>> getUpComing() async{
+    try {
+      final response = await apiService.get(
+        url: "$baseUrl/upcoming?api_key=${ApiKeys.movieKey}",
+      );
+      return Right(MovieModel.fromJson(response));
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(error: e.toString()));
+    }
   }
 }

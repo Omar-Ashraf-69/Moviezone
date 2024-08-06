@@ -4,10 +4,11 @@ import 'package:movie_zone/core/widgets/custom_app_bar.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/info_section.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_header_section.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_row.dart';
+import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class DetailsViewBody extends StatelessWidget {
-  const DetailsViewBody({super.key});
-
+  const DetailsViewBody({super.key, required this.movie});
+  final Movie movie;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,11 +24,17 @@ class DetailsViewBody extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            const MovieDetailsHeaderSection(),
-            SizedBox(height: SizeConfig.screenHeight * .07),
-            const MovieDetailsRowWidget(),
+            MovieDetailsHeaderSection(
+              movie: movie,
+            ),
+            SizedBox(height: SizeConfig.screenHeight * .08),
+            MovieDetailsRowWidget(
+              movie: movie,
+            ),
             const SizedBox(height: 24),
-            const InfoSection(),
+            InfoSection(
+              movie: movie,
+            ),
           ],
         ),
       ),

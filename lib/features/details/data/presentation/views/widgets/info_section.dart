@@ -1,13 +1,13 @@
-
 import 'package:flutter/material.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_extra_info_list.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_extra_info_view_body.dart';
+import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class InfoSection extends StatefulWidget {
   const InfoSection({
-    super.key,
+    super.key, required this.movie,
   });
-
+  final Movie movie;
   @override
   State<InfoSection> createState() => _InfoSectionState();
 }
@@ -25,10 +25,12 @@ class _InfoSectionState extends State<InfoSection> {
           children: [
             MovieExtraInfoList(index: index),
             const SizedBox(height: 24),
-            MovieExtraInfoViewBody(pageController: pageController,
-            onPageChanged: (value) => setState(() {
-              index = value;
-            })),
+            MovieExtraInfoViewBody(
+              movie: widget.movie,
+                pageController: pageController,
+                onPageChanged: (value) => setState(() {
+                      index = value;
+                    },),),
           ],
         ),
       ),

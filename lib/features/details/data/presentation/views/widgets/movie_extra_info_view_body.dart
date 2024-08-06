@@ -1,15 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/cast_widget.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/review_widget.dart';
+import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class MovieExtraInfoViewBody extends StatelessWidget {
   const MovieExtraInfoViewBody({
     super.key,
-    required this.pageController, this.onPageChanged,
+    required this.pageController,
+    this.onPageChanged,
+    required this.movie,
   });
 
+  final Movie movie;
   final PageController pageController;
   final void Function(int)? onPageChanged;
 
@@ -20,14 +23,13 @@ class MovieExtraInfoViewBody extends StatelessWidget {
       controller: pageController,
       onPageChanged: onPageChanged,
       children: [
-        const Text(
-          'From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.',
+        Text(
+          movie.overview!,
           style: AppStyles.styleRegular12,
         ),
         ListView.separated(
           itemBuilder: (context, index) => const ReviewWidget(),
-          separatorBuilder: (context, index) =>
-              const SizedBox(height: 24),
+          separatorBuilder: (context, index) => const SizedBox(height: 24),
           itemCount: 2,
         ),
         Padding(
