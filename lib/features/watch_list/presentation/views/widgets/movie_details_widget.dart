@@ -3,8 +3,9 @@ import 'package:iconly/iconly.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/assets.dart';
 import 'package:movie_zone/features/watch_list/presentation/views/widgets/icon_text_row.dart';
-class WatchListItem extends StatelessWidget {
-  const WatchListItem({
+
+class MovieDetailsWidget extends StatelessWidget {
+  const MovieDetailsWidget({
     super.key,
   });
 

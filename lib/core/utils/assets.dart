@@ -5,6 +5,8 @@ class Assets {
   /// assets/images/Empty_wishlist.png
   static const String imagesEmptyWishlist = "assets/images/Empty_wishlist.png";
   static const String imagesMovieProshor = "assets/images/movie_proshor.png";
+  static const String imagesEllipseSmall = "assets/images/ellipse_small.png";
+  static const String imagesEllipse = "assets/images/ellipse.png";
 
   /// Assets for imagesMovie
   /// assets/images/Movie.png
