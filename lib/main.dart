@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_zone/core/utils/colors.dart';
+import 'package:movie_zone/core/utils/service_locator.dart';
+import 'package:movie_zone/core/widgets/theme.dart';
 import 'package:movie_zone/routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   runApp(const MyApp());
 }
 
@@ -14,14 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Moviezone',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-        scaffoldBackgroundColor: kPrimaryColor,
-        textTheme: Theme.of(context).textTheme.apply(
-              bodyColor: Colors.white,
-              displayColor: Colors.white,
-            ),
-      ),
+      theme: theme(context),
       initialRoute: '/',
       routes: routes,
     );
