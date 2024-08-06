@@ -27,16 +27,32 @@ class HomeViewBody extends StatelessWidget {
               SizedBox(
                 height: 40,
               ),
-              MovieList(),
-              SizedBox(
-                height: 20,
-              ),
-              MoviesGridView(),
+              MoviesCategorySection(),
             ],
           ),
         ),
       ),
       // bottomNavigationBar: CustomBottomNavigationBar(),
+    );
+  }
+}
+
+class MoviesCategorySection extends StatelessWidget {
+  const MoviesCategorySection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          MovieList(),
+          SizedBox(
+            height: 20,
+          ),
+          MoviesGridView(),
+        ],
+      ),
     );
   }
 }

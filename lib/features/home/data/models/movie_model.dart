@@ -23,7 +23,7 @@ class MovieModel {
 
 class Movie {
   bool? adult;
-  String? image;
+  String image;
   List<int>? genreIds;
   int? id;
   String? originalLanguage;
@@ -39,7 +39,7 @@ class Movie {
 
   Movie({
     this.adult,
-    this.image,
+    required this.image,
     this.genreIds,
     this.id,
     this.originalLanguage,

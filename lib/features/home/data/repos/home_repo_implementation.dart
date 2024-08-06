@@ -14,9 +14,10 @@ class HomeRepoImpl extends HomeRepo {
   Future<Either<Failure, MovieModel>> getDiscover() async {
     try {
       final response = await apiService.get(
-        url: "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${ApiKeys.movieKey}",
+        url:
+            "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${ApiKeys.movieKey}",
       );
-      
+
       return Right(MovieModel.fromJson(response));
     } catch (e) {
       if (e is DioException) {
@@ -27,10 +28,10 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getNowPlaying() async{
+  Future<Either<Failure, MovieModel>> getNowPlaying() async {
     try {
       final response = await apiService.get(
-        url: "$baseUrl/now_playing?api_key=${ApiKeys.movieKey}",
+        url: "${baseUrl}now_playing?api_key=${ApiKeys.movieKey}",
       );
       return Right(MovieModel.fromJson(response));
     } catch (e) {
@@ -43,9 +44,9 @@ class HomeRepoImpl extends HomeRepo {
 
   @override
   Future<Either<Failure, MovieModel>> getPopular() async {
-   try {
+    try {
       final response = await apiService.get(
-        url: "$baseUrl/popular?api_key=${ApiKeys.movieKey}",
+        url: "${baseUrl}popular?api_key=${ApiKeys.movieKey}",
       );
       return Right(MovieModel.fromJson(response));
     } catch (e) {
@@ -57,10 +58,10 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getTopRated() async{
+  Future<Either<Failure, MovieModel>> getTopRated() async {
     try {
       final response = await apiService.get(
-        url: "$baseUrl/top_rated?api_key=${ApiKeys.movieKey}",
+        url: "${baseUrl}top_rated?api_key=${ApiKeys.movieKey}",
       );
       return Right(MovieModel.fromJson(response));
     } catch (e) {
@@ -72,10 +73,10 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, MovieModel>> getUpComing() async{
+  Future<Either<Failure, MovieModel>> getUpComing() async {
     try {
       final response = await apiService.get(
-        url: "$baseUrl/upcoming?api_key=${ApiKeys.movieKey}",
+        url: "${baseUrl}upcoming?api_key=${ApiKeys.movieKey}",
       );
       return Right(MovieModel.fromJson(response));
     } catch (e) {
