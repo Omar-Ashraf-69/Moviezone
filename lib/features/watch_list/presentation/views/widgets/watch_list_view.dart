@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_zone/features/details/data/presentation/views/details_view.dart';
 import 'package:movie_zone/features/watch_list/presentation/views/widgets/movie_details_widget.dart';
 
 class WatchListViewWidget extends StatelessWidget {
@@ -11,13 +10,16 @@ class WatchListViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.separated(
-        itemCount: 10,
+        itemCount: 4,
         itemBuilder: (context, index) {
           return InkWell(
               borderRadius: BorderRadius.circular(12),
               overlayColor: WidgetStateProperty.all(Colors.transparent),
               onTap: () {
-                Navigator.pushNamed(context, DetailsView.routeName);
+                // Navigator.pushNamed(
+                //   context,
+                //   DetailsView.routeName,
+                // );
               },
               child: const MovieDetailsWidget());
         },

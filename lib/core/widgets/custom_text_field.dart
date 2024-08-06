@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/colors.dart';
+import 'package:movie_zone/features/search/presentation/managers/cubit/search_cubit.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -12,6 +14,10 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) async {
+        
+        await BlocProvider.of<SearchCubit>(context).search(query: value);
+      },
       enabled: isEnabled,
       cursorColor: blueColor,
       decoration: InputDecoration(

@@ -22,28 +22,21 @@ class MovieDetailsHeaderSection extends StatelessWidget {
         //   width: SizeConfig.screenWidth,
         //   fit: BoxFit.cover,
         // ),
-        if (movie.image != null)
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(24),
-              bottomRight: Radius.circular(24),
-            ),
-            child: FancyShimmerImage(
-              imageUrl: "https://image.tmdb.org/t/p/w500${movie.posterPath}",
-              errorWidget: const Icon(
-                Icons.error,
-              ),
-              width: SizeConfig.screenWidth,
-              height: SizeConfig.screenHeight * 0.27,
-              boxFit: BoxFit.cover,
-            ),
-          )
-        else
-          Image.asset(
-            Assets.imagesPanner,
-            width: SizeConfig.screenWidth,
-            fit: BoxFit.cover,
+        ClipRRect(
+          borderRadius: const BorderRadius.only(
+            bottomLeft: Radius.circular(24),
+            bottomRight: Radius.circular(24),
           ),
+          child: FancyShimmerImage(
+            imageUrl: "https://image.tmdb.org/t/p/w500${movie.posterPath}",
+            errorWidget: const Icon(
+              Icons.error,
+            ),
+            width: SizeConfig.screenWidth,
+            height: SizeConfig.screenHeight * 0.27,
+            boxFit: BoxFit.cover,
+          ),
+        ),
         Positioned(
           bottom: 0,
           child: Container(
