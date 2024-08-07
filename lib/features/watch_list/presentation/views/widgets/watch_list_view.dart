@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:movie_zone/features/details/data/presentation/views/details_view.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
@@ -24,7 +23,7 @@ class WatchListViewWidget extends StatelessWidget {
               final movie = movies[index];
               return InkWell(
                 borderRadius: BorderRadius.circular(12),
-                overlayColor: MaterialStateProperty.all(Colors.transparent),
+                overlayColor: WidgetStateProperty.all(Colors.transparent),
                 onTap: () {
                   Navigator.pushNamed(
                     context,
