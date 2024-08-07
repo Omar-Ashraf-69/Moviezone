@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:movie_zone/core/utils/assets.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
 import 'package:movie_zone/features/watch_list/presentation/views/widgets/watch_list_app_bar.dart';
@@ -20,9 +21,15 @@ class WatchListView extends StatelessWidget {
               const SizedBox(
                 height: 38,
               ),
-              Hive.box<Movie>('movies').isNotEmpty
-                  ? const WatchListViewWidget()
-                  : Expanded(child: Image.asset(Assets.imagesEmptyWishlist)),
+              ValueListenableBuilder<Box<Movie>>(
+                valueListenable: Hive.box<Movie>('movies').listenable(),
+                builder: (context, box, _) {
+                  return box.isNotEmpty
+                      ? const WatchListViewWidget()
+                      : Expanded(
+                          child: Image.asset(Assets.imagesEmptyWishlist));
+                },
+              ),
             ],
           ),
         ),

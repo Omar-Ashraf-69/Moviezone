@@ -9,11 +9,11 @@ import 'package:movie_zone/features/home/presentation/managers/discovery_cubit/d
 import 'package:movie_zone/features/home/presentation/managers/home_cubit.dart';
 import 'package:movie_zone/routes.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
-Hive.registerAdapter(MovieAdapter());
-await Hive.openBox<Movie>('movies');
+  Hive.registerAdapter(MovieAdapter());
+  await Hive.openBox<Movie>('movies');
   setupGetIt();
   runApp(const MyApp());
 }
@@ -24,22 +24,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-
-    providers: [
-
-      BlocProvider<HomeCubit>(
-        create: (context) => HomeCubit(
-        getIt<HomeRepoImpl>(),
-      )..getNowPlaying(),
-      ),
-      BlocProvider<DiscoveryCubit>(
-        create: (context) => DiscoveryCubit(
-        getIt<HomeRepoImpl>(),
-      )..getDiscovery(),
-      ),
-    ],
+      providers: [
+        BlocProvider<HomeCubit>(
+          create: (context) => HomeCubit(
+            getIt<HomeRepoImpl>(),
+          )..getNowPlaying(),
+        ),
+        BlocProvider<DiscoveryCubit>(
+          create: (context) => DiscoveryCubit(
+            getIt<HomeRepoImpl>(),
+          )..getDiscovery(),
+        ),
+      ],
       child: MaterialApp(
-      title: 'Moviezone',
+        title: 'Moviezone',
         debugShowCheckedModeBanner: false,
         theme: theme(context),
         initialRoute: '/',
