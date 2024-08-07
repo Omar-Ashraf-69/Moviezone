@@ -2,6 +2,7 @@ import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
+import 'package:movie_zone/core/constants/cons.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/size_config.dart';
 import 'package:movie_zone/features/home/data/models/movie_model.dart';
@@ -29,7 +30,7 @@ class SearchedMovieDetails extends StatelessWidget {
                 borderRadius: BorderRadius.circular(24),
                 child: FancyShimmerImage(
                   imageUrl:
-                      "https://image.tmdb.org/t/p/w500${movie.results?[index].image}",
+                      "$imageBaseUrl${movie.results?[index].image}",
                   errorWidget: const Icon(
                     Icons.error,
                   ),
@@ -47,7 +48,7 @@ class SearchedMovieDetails extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: SizeConfig.screenWidth * 0.5,
+                  width: SizeConfig.screenWidth * 0.47,
                   child: Text(
                     movie.results![index].title!,
                     style: AppStyles.styleRegular16,

@@ -1,6 +1,7 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:movie_zone/core/constants/cons.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/size_config.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
@@ -23,7 +24,7 @@ class MovieDetailsWidget extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(24),
             child: FancyShimmerImage(
-              imageUrl: "https://image.tmdb.org/t/p/w500${movie.image}",
+              imageUrl: "$imageBaseUrl${movie.image}",
               errorWidget: const Icon(
                 Icons.error,
               ),
@@ -42,7 +43,7 @@ class MovieDetailsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              width: SizeConfig.screenWidth * 0.5,
+              width: SizeConfig.screenWidth * 0.47,
               child: Text(
                 movie.title ?? "none",
                 style: AppStyles.styleRegular16,

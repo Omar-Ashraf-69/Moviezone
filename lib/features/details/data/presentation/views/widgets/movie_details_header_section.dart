@@ -1,5 +1,6 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:movie_zone/core/constants/cons.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/core/utils/colors.dart';
 import 'package:movie_zone/core/utils/size_config.dart';
@@ -27,7 +28,7 @@ class MovieDetailsHeaderSection extends StatelessWidget {
             bottomRight: Radius.circular(24),
           ),
           child: FancyShimmerImage(
-            imageUrl: "https://image.tmdb.org/t/p/w500${movie.posterPath}",
+            imageUrl: "$imageBaseUrl${movie.posterPath}",
             errorWidget: const Icon(
               Icons.error,
             ),

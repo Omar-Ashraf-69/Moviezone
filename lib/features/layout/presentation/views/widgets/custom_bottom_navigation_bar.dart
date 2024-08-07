@@ -4,7 +4,8 @@ import 'package:movie_zone/core/utils/colors.dart';
 import 'package:movie_zone/features/layout/data/models/bottom_navigation_bar_items_list.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({super.key, this.onTap, required this.currentIndex});
+  const CustomBottomNavigationBar(
+      {super.key, this.onTap, required this.currentIndex});
   final void Function(int)? onTap;
   final int currentIndex;
   @override
@@ -18,18 +19,16 @@ class CustomBottomNavigationBar extends StatelessWidget {
           ),
         ),
       ),
-      child: SizedBox(
-        height: 75,
-        child: BottomNavigationBar(
-          backgroundColor: kPrimaryColor,
-          selectedItemColor: blueColor,
-          unselectedItemColor: mediumGreyColor,
-          selectedLabelStyle: AppStyles.styleRegular12,
-          unselectedLabelStyle: AppStyles.styleRegular12,
-          currentIndex: currentIndex,
-          onTap: onTap,
-          items: items,
-        ),
+      padding: const EdgeInsets.only(top: 4),
+      child: BottomNavigationBar(
+        backgroundColor: kPrimaryColor,
+        selectedItemColor: blueColor,
+        unselectedItemColor: mediumGreyColor,
+        selectedLabelStyle: AppStyles.styleRegular12,
+        unselectedLabelStyle: AppStyles.styleRegular12,
+        currentIndex: currentIndex,
+        onTap: onTap,
+        items: items,
       ),
     );
   }

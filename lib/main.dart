@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:movie_zone/core/utils/service_locator.dart';
@@ -15,7 +16,16 @@ void main() async {
   Hive.registerAdapter(MovieAdapter());
   await Hive.openBox<Movie>('movies');
   setupGetIt();
-  runApp(const MyApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(
+      const MyApp(),
+      // DevicePreview(
+      //   enabled: !kReleaseMode,
+      //   builder: (context) => const MyApp(), // Wrap your app
+      // ),
+    );
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -40,6 +50,8 @@ class MyApp extends StatelessWidget {
         title: 'Moviezone',
         debugShowCheckedModeBanner: false,
         theme: theme(context),
+        // locale: DevicePreview.locale(context),
+        // builder: DevicePreview.appBuilder,
         initialRoute: '/',
         routes: routes,
       ),

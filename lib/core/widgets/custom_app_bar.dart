@@ -19,8 +19,7 @@ class CustomAppBar extends StatelessWidget {
   final Movie? movie;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 32,
+    return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
