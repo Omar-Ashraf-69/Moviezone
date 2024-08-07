@@ -4,6 +4,7 @@ import 'package:movie_zone/core/widgets/custom_app_bar.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/info_section.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_header_section.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_row.dart';
+import 'package:movie_zone/features/home/data/models/movie.dart';
 import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class DetailsViewBody extends StatelessWidget {
@@ -20,6 +21,7 @@ class DetailsViewBody extends StatelessWidget {
               child: CustomAppBar(
                 label: 'Details',
                 icon: Icons.bookmark,
+                movie: movie,
                 onTap: () => Navigator.pop(context),
               ),
             ),

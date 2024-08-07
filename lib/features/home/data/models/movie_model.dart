@@ -1,3 +1,5 @@
+import 'package:movie_zone/features/home/data/models/movie.dart';
+
 class MovieModel {
   int? page;
   List<Movie>? results;
@@ -20,67 +22,6 @@ class MovieModel {
     );
   }
 }
-
-class Movie {
-  bool? adult;
-  String image;
-  List<int>? genreIds;
-  int? id;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  String? releaseDate;
-  String? title;
-  bool? video;
-  double? voteAverage;
-  int? voteCount;
-
-  Movie({
-    this.adult,
-    required this.image,
-    this.genreIds,
-    this.id,
-    this.originalLanguage,
-    this.originalTitle,
-    this.overview,
-    this.popularity,
-    this.posterPath,
-    this.releaseDate,
-    this.title,
-    this.video,
-    this.voteAverage,
-    this.voteCount,
-  });
-
-  factory Movie.fromJson(Map<String, dynamic> json) {
-    return Movie(
-      adult: json['adult'],
-      image: json['backdrop_path'],
-      genreIds: (json['genre_ids'] as List?)?.map((item) => item as int).toList(),
-      id: json['id'],
-      originalLanguage: json['original_language'],
-      originalTitle: json['original_title'],
-      overview: json['overview'],
-      popularity: (json['popularity'] as num?)?.toDouble(),
-      posterPath: json['poster_path'],
-      releaseDate: json['release_date'],
-      title: json['title'],
-      video: json['video'],
-      voteAverage: (json['vote_average'] as num?)?.toDouble(),
-      voteCount: json['vote_count'],
-    );
-  }
-}
-
-
-
-
-
-
-
-
 
 // class MovieModel {
 //   int? page;

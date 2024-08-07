@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/cast_widget.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/review_widget.dart';
+import 'package:movie_zone/features/home/data/models/movie.dart';
 import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class MovieExtraInfoViewBody extends StatelessWidget {

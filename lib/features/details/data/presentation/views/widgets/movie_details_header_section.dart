@@ -1,9 +1,9 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_zone/core/utils/app_styles.dart';
-import 'package:movie_zone/core/utils/assets.dart';
 import 'package:movie_zone/core/utils/colors.dart';
 import 'package:movie_zone/core/utils/size_config.dart';
+import 'package:movie_zone/features/home/data/models/movie.dart';
 import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class MovieDetailsHeaderSection extends StatelessWidget {
