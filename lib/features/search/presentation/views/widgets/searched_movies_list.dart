@@ -23,6 +23,7 @@ class SeachedMovieListView extends StatelessWidget {
                         overlayColor:
                             WidgetStateProperty.all(Colors.transparent),
                         onTap: () {
+                          FocusManager.instance.primaryFocus?.unfocus();
                           Navigator.pushNamed(context, DetailsView.routeName,
                               arguments: state.movies.results![index]);
                         },

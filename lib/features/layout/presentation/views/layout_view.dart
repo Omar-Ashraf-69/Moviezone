@@ -6,10 +6,11 @@ class LayoutView extends StatelessWidget {
     super.key,
   });
   static const routeName = '/layout_view';
-  
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      resizeToAvoidBottomInset: false,
       body: LayoutViewBody(),
     );
   }
