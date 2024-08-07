@@ -5,7 +5,6 @@ import 'package:movie_zone/core/widgets/custom_app_bar.dart';
 import 'package:movie_zone/core/widgets/custom_text_field.dart';
 import 'package:movie_zone/features/search/presentation/managers/cubit/search_cubit.dart';
 import 'package:movie_zone/features/search/presentation/views/widgets/searched_movies_list.dart';
-import 'package:movie_zone/features/watch_list/presentation/views/widgets/watch_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});

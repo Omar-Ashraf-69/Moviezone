@@ -23,7 +23,7 @@ class SearchedMovieDetails extends StatelessWidget {
         return Row(
           children: [
             SizedBox(
-              width: SizeConfig.screenWidth * 0.28,
+              width: SizeConfig.screenWidth * 0.27,
               height: SizeConfig.screenHeight * 0.15,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(24),

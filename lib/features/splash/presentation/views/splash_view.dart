@@ -8,11 +8,12 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig.init(context);
     Future.delayed(const Duration(seconds: 2), () {
       // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, LayoutView.routeName);
     });
-    SizeConfig.init(context);
+    // return const SplashViewBody();
     return Scaffold(
       body: Center(
         child: Image.asset(

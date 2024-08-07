@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_item.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
-import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class MovieDetailsRowWidget extends StatelessWidget {
   const MovieDetailsRowWidget({

@@ -5,7 +5,6 @@ import 'package:movie_zone/features/details/data/presentation/views/widgets/info
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_header_section.dart';
 import 'package:movie_zone/features/details/data/presentation/views/widgets/movie_details_row.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
-import 'package:movie_zone/features/home/data/models/movie_model.dart';
 
 class DetailsViewBody extends StatelessWidget {
   const DetailsViewBody({super.key, required this.movie});

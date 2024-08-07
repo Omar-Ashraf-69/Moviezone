@@ -42,7 +42,7 @@ class MoviesCategorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return const Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

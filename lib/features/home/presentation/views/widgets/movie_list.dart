@@ -19,7 +19,6 @@ class _MovieListState extends State<MovieList> {
   @override
   void initState() {
     super.initState();
-    BlocProvider.of<HomeCubit>(context).getNowPlaying();
   }
 
   @override

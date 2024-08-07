@@ -6,6 +6,7 @@ import 'package:movie_zone/core/utils/service_locator.dart';
 import 'package:movie_zone/core/widgets/theme.dart';
 import 'package:movie_zone/features/home/data/models/movie.dart';
 import 'package:movie_zone/features/home/data/repos/home_repo_implementation.dart';
+import 'package:movie_zone/features/home/presentation/managers/discovery_cubit/discovery_cubit.dart';
 import 'package:movie_zone/features/home/presentation/managers/home_cubit.dart';
 import 'package:movie_zone/routes.dart';
 
@@ -23,12 +24,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit(
-        getIt<HomeRepoImpl>()..getDiscover(),
+    return MultiBlocProvider(
+
+    providers: [
+
+      BlocProvider<HomeCubit>(
+        create: (context) => HomeCubit(
+        getIt<HomeRepoImpl>(),
+      )..getNowPlaying(),
       ),
+      BlocProvider<DiscoveryCubit>(
+        create: (context) => DiscoveryCubit(
+        getIt<HomeRepoImpl>(),
+      )..getDiscovery(),
+      ),
+    ],
       child: MaterialApp(
-        title: 'Moviezone',
+      title: 'Moviezone',
         debugShowCheckedModeBanner: false,
         theme: theme(context),
         initialRoute: '/',
